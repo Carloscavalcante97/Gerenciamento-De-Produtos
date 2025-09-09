@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apple Dark Design System */
+@layer base {
+  :root {
+/* Apple Dark Theme */
+--background: 0 0% 4%;
+--background-secondary: 0 0% 7%;
+--background-tertiary: 0 0% 11%;
+--foreground: 0 0% 98%;
+
+/* Apple Green Accent */
+--primary: 145 85% 35%;              /* verde esmeralda escuro */
+--primary-hover: 145 85% 40%;        /* verde hover */
+--primary-foreground: 0 0% 100%;
+
+/* Glass Card System */
+--card: 0 0% 8%;
+--card-hover: 0 0% 10%;
+--card-foreground: 0 0% 98%;
+--card-border: 0 0% 15%;
+
+/* Interactive Elements */
+--secondary: 0 0% 12%;
+--secondary-hover: 0 0% 16%;
+--secondary-foreground: 0 0% 95%;
+
+--muted: 0 0% 14%;
+--muted-foreground: 0 0% 65%;
+
+--accent: 145 40% 35%;               /* detalhe esverdeado */
+--accent-hover: 145 40% 40%;         /* hover esverdeado */
+--accent-foreground: 0 0% 95%;
+
+/* Status Colors */
+--destructive: 0 85% 60%;
+--destructive-hover: 0 85% 55%;
+--destructive-foreground: 0 0% 98%;
+
+--success: 145 85% 40%;              /* sucesso em verde */
+--success-hover: 145 85% 45%;
+--success-foreground: 0 0% 98%;
+
+--warning: 38 92% 50%;
+--warning-hover: 38 92% 55%;
+--warning-foreground: 0 0% 98%;
+
+/* UI Elements */
+--border: 0 0% 18%;
+--border-hover: 0 0% 22%;
+--input: 0 0% 12%;
+--input-border: 0 0% 20%;
+--ring: 145 85% 40%;                 /* borda de foco verde */
+
+/* Apple Gradients */
+--gradient-bg: linear-gradient(135deg, hsl(0, 0%, 4%) 0%, hsl(0, 0%, 7%) 100%);
+--gradient-card: linear-gradient(135deg, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 6%) 100%);
+--gradient-primary: linear-gradient(135deg, hsl(145, 85%, 38%) 0%, hsl(145, 85%, 32%) 100%);
+--gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+/* Shadows & Effects */
+--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+--shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+/* Animation Timings */
+--transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+--transition-smooth: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+--transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+--radius: 1rem;
+
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+
+  
+  .glass-card {
+    @apply glass rounded-2xl p-6;
+  }
+  
+  .glass-hover {
+    @apply transition-all duration-200 hover:bg-card-hover hover:border-border-hover hover:shadow-xl;
+  }
+  
+  /* Smooth Transitions */
+  .transition-apple {
+    transition: all var(--transition-fast);
+  }
+  
+  .transition-smooth {
+    transition: all var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: all var(--transition-bounce);
+  }
+  
+  /* Interactive States */
+  .button-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground;
+    background: var(--gradient-primary);
+  }
+  
+  .button-glass {
+    @apply glass hover:bg-secondary-hover text-secondary-foreground;
+  }
+  
+  /* Text Gradients */
+  .text-gradient-primary {
+    @apply bg-gradient-to-br from-green-300 via-emerald-500 to-green-700 bg-clip-text text-transparent;
+  }
+  
+  /* Liquid Glass */
+  .glass {
+    background: var(--gradient-glass, rgba(255, 255, 255, 0.055));
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+}
