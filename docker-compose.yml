@@ -1,0 +1,18 @@
+services:
+  backend:
+    container_name: products-api
+    build:
+      context: ./products-api
+    ports:
+      - "8080:8080"
+
+  frontend:
+    container_name: products-frontend
+    build:
+      context: ./products-frontend
+    ports:
+      - "3000:4173"
+    environment:
+      - VITE_API_URL=http://localhost:8080/api
+    depends_on:
+      - backend
