@@ -2,7 +2,7 @@
 
 Aplicação full‑stack para **gestão de produtos**, desenvolvida como parte de um **desafio técnico (prazo: 2 dias)**. O repositório é um monorepo com **backend (Java 17 + Spring Boot)** e **frontend (React + Vite + Tailwind)** e já inclui **Docker Compose** para subir tudo junto.
 
-![Capa do projeto — Produtos](/products-frontend/public/og-image.png)
+![Capa do projeto — Produtos](/Images/Example.png)
 
 ---
 
@@ -157,7 +157,7 @@ mvn verify
 
 ```
 
----
+## ![Testes de cobertura — Produtos](/Images/Coverage-Result.png)
 
 ## Decisões de projeto (resumo)
 
