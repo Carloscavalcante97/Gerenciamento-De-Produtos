@@ -70,7 +70,7 @@ pnpm install
 pnpm dev
 ```
 
-- Frontend (dev): http://localhost:3000 _(após mudar a porta no Vite)_
+- Frontend (dev): http://localhost:3000
 
 ---
 
@@ -80,7 +80,7 @@ pnpm dev
 - **Entidade**: `Product { id(UUID), name, description, price(BigDecimal), quantity(Integer), createdAt(LocalDateTime) }`
 - **Validações (Bean Validation)** – em `ProductRequestDTO`:
   - `name`: **@NotBlank**
-  - `price`: **@NotNull** + **@Min(1)** _(ideal seria `@DecimalMin` para BigDecimal – ver ajustes)_
+  - `price`: **@NotNull** + **@Min(1)**
   - `quantity`: **@NotNull** + **@Min(0)**
 - **Tratamento de erros**: `GlobalExceptionHandler` retorna **400** com lista de mensagens no formato `"campo: mensagem"` para erros de validação.
 - **CORS global**: `CorsGlobalConfig`.
@@ -110,7 +110,7 @@ Base path: **`/api/products`**
   }
   ```
 
-- `PUT /api/products/{id}` _(atualização parcial)_  
+- `PUT /api/products/{id}`
   Aceita `ProductUpdateRequestDTO` com campos **opcionais**. Exemplo:
 
   ```json
